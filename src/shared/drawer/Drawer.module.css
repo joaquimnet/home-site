@@ -1,0 +1,25 @@
+.Drawer {
+  width: 60vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transition: transform 0.2s ease-in;
+  background-color: #1d1d1d;
+  z-index: 420;
+}
+
+.Drawer li {
+  width: 100%;
+  height: 8rem;
+}
+
+.Backdrop {
+  width: 100vw;
+  height: 100vh;
+  z-index: 419;
+  background-color: rgba(53, 52, 138, 0.473);
+  position: fixed;
+  top: 0;
+  left: 0;
+}

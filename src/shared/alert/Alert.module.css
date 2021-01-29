@@ -1,0 +1,18 @@
+.Alert {
+  width: 100%;
+  padding: 1rem;
+  font-weight: bold;
+  border-radius: 0.125rem;
+}
+
+.Success {
+  color: rgb(10, 97, 36);
+  border: 1px solid rgb(10, 97, 36);
+  background-color: rgb(118, 206, 133);
+}
+
+.Error {
+  color: rgb(153, 36, 7);
+  border: 1px solid rgb(153, 36, 7);
+  background-color: rgb(226, 133, 133);
+}

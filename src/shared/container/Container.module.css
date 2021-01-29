@@ -1,0 +1,76 @@
+.Container {
+  height: 100%;
+  padding: 0 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.Fluid {
+  padding: 0 !important;
+}
+
+.FadeIn {
+  animation: fadein 1s;
+}
+
+.JustifyCenter {
+  justify-content: center;
+}
+
+.JustifyStart {
+  justify-content: flex-start;
+}
+
+.AlignCenter {
+  align-items: center;
+}
+
+.Row {
+  flex-direction: row;
+}
+
+.Column {
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+  .Container {
+    padding: 0 2rem;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .Container {
+    padding: 0 4rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .Container {
+    padding: 0 6rem;
+  }
+}
+
+@media only screen and (min-width: 1365px) {
+  .Container {
+    padding: 0 8rem;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .Container {
+    padding: 0 12rem;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

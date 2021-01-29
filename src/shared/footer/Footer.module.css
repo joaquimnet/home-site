@@ -1,0 +1,8 @@
+.Footer {
+  height: calc(40vh - 4rem);
+  background: black;
+}
+
+.Image {
+  width: 4rem;
+}

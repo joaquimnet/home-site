@@ -1,0 +1,6 @@
+export const Actions = {
+  LOAD_USER: 'LOAD_USER',
+  UPDATE_ACCESS_TOKEN: 'UPDATE_ACCESS_TOKEN',
+  LOGOUT: 'LOGOUT',
+  LOGIN: 'LOGIN',
+};
