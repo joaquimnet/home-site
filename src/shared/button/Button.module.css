@@ -4,16 +4,16 @@
   align-items: center;
   width: 6rem;
   padding: 0.5rem;
-  background: linear-gradient(to right, #772020, #3175bf);
   z-index: 1;
   position: relative;
   border: none;
   border-radius: 0.125rem;
-  color: white;
-  box-shadow: 0 2px 12px -3px rgba(0, 255, 255, 0.5);
   transition: transform 100ms ease-in;
   cursor: pointer;
   outline: none;
+  background: linear-gradient(to right, #772020, #3175bf);
+  color: white;
+  box-shadow: 0 2px 12px -3px rgba(0, 255, 255, 0.5);
 }
 
 .BG {
@@ -61,13 +61,21 @@
   content: '';
 }
 
-.Fab:hover,
-.Button:hover {
+.Block {
+  width: 100%;
+}
+
+.Block > .BG {
+  width: calc(100% - 32px);
+}
+
+.Fab.Animated:hover,
+.Button.Animated:hover {
   transform: scale(1.2);
 }
 
-.Fab:active,
-.Button:active {
+.Fab.Animated:active,
+.Button.Animated:active {
   transition: transform 50ms ease-in;
   transform: scale(1.03) rotateZ(10deg);
 }

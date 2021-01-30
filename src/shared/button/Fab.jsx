@@ -2,8 +2,9 @@ import React from 'react';
 
 import classes from './Button.module.css';
 
-export const Fab = ({ children, className, as, ...otherProps }) => {
+export const Fab = ({ children, className, as, animated, ...otherProps }) => {
   let css = classes.Fab;
+  if (animated) css += ' ' + classes.Animated;
   if (className) css += ' ' + className;
 
   const Component = as || 'button';
