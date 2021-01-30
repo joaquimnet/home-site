@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import loadable from '@loadable/component';
 import { useQuery } from 'react-query';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
@@ -8,8 +9,9 @@ import { FaCalendarAlt } from 'react-icons/fa';
 
 import { BACKEND_URL } from '../../../config';
 import { PostReadMenu } from './PostReadMenu';
-import { Markdown } from '../../../shared/markdown/Markdown';
 import { Page } from '../../../shared/page/Page';
+
+const Markdown = loadable(() => import('../../../shared/markdown/Markdown'));
 
 const fetchPost = async ({ queryKey }) => {
   const [, slug] = queryKey;

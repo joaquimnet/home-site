@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import loadable from '@loadable/component';
 
-import { Markdown } from '../../../shared/markdown/Markdown';
 import { Label } from '../../../shared/input/Label';
 import { TextArea } from '../../../shared/input/TextArea';
+
+const Markdown = loadable(() => import('../../../shared/markdown/Markdown'));
 
 const EditorContainer = styled.div`
   width: 100%;

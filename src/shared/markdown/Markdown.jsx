@@ -29,6 +29,8 @@ const StyledMarkdown = styled(ReactMarkdown)`
   color: white;
 `;
 
-export const Markdown = (props) => {
+const Markdown = (props) => {
   return <StyledMarkdown plugins={[gfm]} renderers={renderers} {...props} />;
 };
+
+export default Markdown;
