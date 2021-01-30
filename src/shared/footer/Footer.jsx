@@ -5,7 +5,7 @@ import logo from '../../assets/logo.svg';
 import { Container } from '../container/Container';
 import { TranslateButton } from '../i18n/TranslateButton';
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <footer className={classes.Footer}>
       <Container justifyCenter alignCenter column>
@@ -24,3 +24,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;

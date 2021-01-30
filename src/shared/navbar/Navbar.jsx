@@ -9,7 +9,7 @@ import { useNavigation } from '../../hooks/useNavigation';
 import { NavItem } from './NavItem';
 import { Nav } from './Nav';
 
-export const Navbar = () => {
+const Navbar = () => {
   const { makeNavigation } = useNavigation();
 
   return (
@@ -32,3 +32,5 @@ export const Navbar = () => {
     </Container>
   );
 };
+
+export default Navbar;

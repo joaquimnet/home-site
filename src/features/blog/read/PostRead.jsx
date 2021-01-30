@@ -115,7 +115,7 @@ const StyledPostRead = styled(Page)`
   }
 `;
 
-export const PostRead = () => {
+const PostRead = () => {
   const { slug } = useParams();
   const { data, status, error } = useQuery(['post', slug], fetchPost, {
     staleTime: 30000,
@@ -162,3 +162,5 @@ export const PostRead = () => {
 function dateToString(date) {
   return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 }
+
+export default PostRead;

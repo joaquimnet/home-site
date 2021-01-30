@@ -11,7 +11,7 @@ const fetchPosts = async () => {
   return res.json();
 };
 
-export function PostListing() {
+export default function PostListing() {
   const { data, status } = useQuery('posts', fetchPosts, { staleTime: 5000 });
 
   return (
