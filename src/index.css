@@ -86,17 +86,6 @@ a:hover {
   padding: 0.125rem;
 }
 
-.form-control input[type='submit'] {
-  padding: 0.5rem;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.form-control input[type='submit']:hover {
-  box-shadow: 3px 3px 3px rgba(74, 213, 231, 0.3), -2px -2px 2px rgba(231, 74, 74, 0.3);
-  font-weight: bold;
-}
-
 @keyframes fadein {
   from {
     opacity: 0;
