@@ -21,7 +21,7 @@ const StyledHome = styled(Page)`
 
 const HomeButtons = lazy(() => import('./HomeButtons'));
 
-export function Home() {
+export default function Home() {
   const { t } = useTranslation();
 
   return (

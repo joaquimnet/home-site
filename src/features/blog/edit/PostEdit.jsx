@@ -54,7 +54,7 @@ const editPost = (slug, post, token, cache) => {
     });
 };
 
-export const PostEdit = () => {
+const PostEdit = () => {
   const { slug } = useParams();
   const { data: post, status } = useQuery(['post', slug], fetchPosts, {
     staleTime: Infinity,
@@ -110,12 +110,7 @@ export const PostEdit = () => {
   }
 
   const submit = () => {
-    editPost(
-      slug,
-      { title, description, tags, content: postContent },
-      tokens.access,
-      queryCache,
-    );
+    editPost(slug, { title, description, tags, content: postContent }, tokens.access, queryCache);
   };
 
   return (
@@ -136,3 +131,5 @@ export const PostEdit = () => {
     </Page>
   );
 };
+
+export default PostEdit;

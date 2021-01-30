@@ -42,7 +42,7 @@ const fetchTags = async () => {
   return res.data;
 };
 
-export const PostCreate = () => {
+const PostCreate = () => {
   const { data: tagSuggestions } = useQuery('tags', fetchTags, {
     staleTime: 10000,
   });
@@ -69,11 +69,7 @@ export const PostCreate = () => {
   }
 
   const submit = () => {
-    createPost(
-      { title, description, tags, content },
-      tokens.access,
-      setRedirect,
-    );
+    createPost({ title, description, tags, content }, tokens.access, setRedirect);
   };
 
   return (
@@ -96,3 +92,5 @@ export const PostCreate = () => {
     </>
   );
 };
+
+export default PostCreate;

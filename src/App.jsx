@@ -1,9 +1,9 @@
 import React, { Suspense, lazy } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import loadable from '@loadable/component';
 // 👆 Dependencies
 
 // 👇 Project Components
-import { Home } from './features/home/Home';
 import { ApplyLogout } from './shared/auth/ApplyLogout';
 import { Page } from './shared/page/Page';
 import { UserFetcher } from './shared/auth/UserFetcher';
@@ -11,14 +11,16 @@ import { Bit } from './features/knowledge/bit/Bit';
 import { Login } from './features/login/Login';
 import { AuthRoute } from './shared/auth/AuthRoute';
 import { Profile } from './features/profile/Profile';
-import { PostListing } from './features/blog/list/PostListing';
-import { PostCreate } from './features/blog/create/PostCreate';
-import { PostRead } from './features/blog/read/PostRead';
-import { PostEdit } from './features/blog/edit/PostEdit';
 import { ToastContainer } from 'react-toastify';
 
 const Navbar = lazy(() => import('./shared/navbar/Navbar'));
 const Footer = lazy(() => import('./shared/footer/Footer'));
+
+const Home = loadable(() => import('./features/home/Home'));
+const PostListing = loadable(() => import('./features/blog/list/PostListing'));
+const PostCreate = loadable(() => import('./features/blog/create/PostCreate'));
+const PostRead = loadable(() => import('./features/blog/read/PostRead'));
+const PostEdit = loadable(() => import('./features/blog/edit/PostEdit'));
 
 export const App = () => {
   return (
