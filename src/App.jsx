@@ -17,6 +17,7 @@ import { PostListing } from './features/blog/list/PostListing';
 import { PostCreate } from './features/blog/create/PostCreate';
 import { PostRead } from './features/blog/read/PostRead';
 import { PostEdit } from './features/blog/edit/PostEdit';
+import { ToastContainer } from 'react-toastify';
 // import { About } from './features/about/About';
 
 export const App = () => {
@@ -26,7 +27,8 @@ export const App = () => {
       <UserFetcher />
       {/* The navbar stays out of the switch because it appears in all pages */}
       <Navbar />
-      {/*Has it's own router*/}
+      {/*Required to show toast messages*/}
+      <ToastContainer />
       <Switch>
         <Route path="/" exact>
           <Home />
