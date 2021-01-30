@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { HashRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
+import './i18n';
+
 import { App } from './App';
 
 import 'normalize.css';

@@ -4,7 +4,7 @@ import { Actions } from '../Actions';
 const initialState = {
   user: null,
   tokens: {
-    refresh: localStorage.getItem('3pixel.authToken'),
+    refresh: localStorage.getItem('dev.joaquimneto.authToken'),
     access: null,
   },
 };
@@ -28,9 +28,6 @@ export const userReducer = produce((draft, action) => {
       localStorage.removeItem('3pixel.authToken');
       break;
     default:
-      if (!action.type.includes('@@')) {
-        throw new Error(`Unhandled action type ${action?.type ?? action}`);
-      }
       break;
   }
 }, initialState);

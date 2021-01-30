@@ -10,6 +10,7 @@ import { useNavigation } from '../../hooks/useNavigation';
 import { Page } from '../../shared/page/Page';
 import { Button } from '../../shared/button/Button';
 import { Container } from '../../shared/container/Container';
+import { useTranslation } from 'react-i18next';
 
 const StyledLoginForm = styled.form`
   padding: 0 2rem 2rem 2rem;
@@ -25,6 +26,7 @@ const StyledLoginForm = styled.form`
 export const Login = () => {
   const dispatch = useDispatch();
   const { navigate } = useNavigation();
+  const { t } = useTranslation();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -72,7 +74,7 @@ export const Login = () => {
             />
           </div>
           <div className="form-control">
-            <label htmlFor="loginPassword">Password</label>
+            <label htmlFor="loginPassword">{t('login.password')}</label>
             <input
               type="password"
               name="password"
@@ -83,7 +85,7 @@ export const Login = () => {
           </div>
           <Container alignCenter style={{ height: 'auto' }}>
             <Button type="submit" name="submit" id="loginSubmit">
-              Login
+              {t('login.signin')}
             </Button>
           </Container>
           {error && (

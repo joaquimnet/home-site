@@ -11,7 +11,7 @@ export const Button = ({ children, className, as, block, animated, ...otherProps
   const Component = as || 'button';
 
   if (Component === 'input') {
-    return <Component className={css} value={children} {...otherProps} />
+    return <Component className={css} value={children} {...otherProps} />;
   }
 
   return (

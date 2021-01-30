@@ -1,0 +1,18 @@
+{
+  "en": {
+    "translation": {
+      "welcomeTitle": "Welcome to my page.",
+      "welcomeParagraph": "It isn't ready yet, so in the mean time why don't you check out my <0>blog</0>?",
+      "login.password": "Password",
+      "login.signin": "Sign In"
+    }
+  },
+  "pt": {
+    "translation": {
+      "welcomeTitle": "Bem-vindo(a) à minha página.",
+      "welcomeParagraph": "Ela não está pronta ainda, então dá uma olhada lá no meu <0>blog</0> enquanto isso.",
+      "login.password": "Senha",
+      "login.signin": "Entrar"
+    }
+  }
+}

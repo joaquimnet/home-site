@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { FaGithub, FaTwitter, FaEnvelope, FaBook } from 'react-icons/all';
+import { useTranslation, Trans } from 'react-i18next';
+import { FaGithub, FaTwitter, FaEnvelope, FaBook } from 'react-icons/fa';
 
 import { Page } from '../../shared/page/Page';
 import { Button } from '../../shared/button/Button';
+import { useTranslationToggle } from '../../hooks/useTranslationToggle';
 
 const StyledHome = styled(Page)`
   & h1 {
@@ -30,7 +32,8 @@ const ButtonContainer = styled.div`
     align-items: center;
   }
 
-  & a {
+  & a,
+  button {
     margin: 0 1rem 1rem 0;
 
     & svg {
@@ -40,12 +43,16 @@ const ButtonContainer = styled.div`
 `;
 
 export function Home() {
+  const { t } = useTranslation();
+  const { toggleLang, otherLang, OtherFlag } = useTranslationToggle();
+
   return (
     <StyledHome>
-      <h1 className="text-center">Welcome to my page.</h1>
+      <h1 className="text-center">{t('welcomeTitle')}</h1>
       <p className="text-center">
-        It isn&apos;t ready yet, so in the mean time why don&apos;t you check out my{' '}
-        <Link to="/blog">blog</Link>?
+        <Trans i18nKey="welcomeParagraph">
+          <Link to="/blog" />
+        </Trans>
       </p>
       <hr />
       <ButtonContainer>
@@ -66,6 +73,10 @@ export function Home() {
         </Button>
         <Button animated as={Link} to="/blog">
           <FaBook /> Blog
+        </Button>
+        <Button animated onClick={toggleLang}>
+          {<OtherFlag style={{width: '24px', height: 'auto'}} />}
+          {otherLang.toUpperCase()}
         </Button>
       </ButtonContainer>
     </StyledHome>
