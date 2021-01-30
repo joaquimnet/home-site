@@ -1,6 +1,7 @@
 .Card {
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   background: #1d1d1d;
   padding: 1.5rem 1rem;
   margin: 0.5rem;
+  box-shadow: 0 0 16px -5px rgba(240, 248, 255, 0.2);
 }
