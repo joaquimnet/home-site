@@ -7,6 +7,10 @@ import gfm from 'remark-gfm';
 
 const renderers = {
   code: function Highlight({ language, value }) {
+    if (!value || value.length === 0) {
+      return <span>{value}</span>;
+    }
+
     return (
       <SyntaxHighlighter
         showLineNumbers={true}
