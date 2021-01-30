@@ -8,6 +8,8 @@ import { Actions } from '../../state/Actions';
 import { BACKEND_URL } from '../../config';
 import { useNavigation } from '../../hooks/useNavigation';
 import { Page } from '../../shared/page/Page';
+import { Button } from '../../shared/button/Button';
+import { Container } from '../../shared/container/Container';
 
 const StyledLoginForm = styled.form`
   padding: 0 2rem 2rem 2rem;
@@ -79,9 +81,11 @@ export const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className="form-control">
-            <input type="submit" name="submit" id="loginSubmit" />
-          </div>
+          <Container alignCenter style={{ height: 'auto' }}>
+            <Button type="submit" name="submit" id="loginSubmit">
+              Login
+            </Button>
+          </Container>
           {error && (
             <div className="error">
               <FaTimes className="icon" color="red" /> {error}
