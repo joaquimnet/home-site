@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Page = styled.div`
-  height: calc(100vh - 5rem);
+  min-height: calc(100vh - 5rem);
   padding: 1rem 15rem;
   display: flex;
   flex-flow: column nowrap;
