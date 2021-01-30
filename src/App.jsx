@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 // 👆 Dependencies
 
@@ -6,8 +6,6 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { Home } from './features/home/Home';
 import { ApplyLogout } from './shared/auth/ApplyLogout';
 import { Page } from './shared/page/Page';
-import { Footer } from './shared/footer/Footer';
-import { Navbar } from './shared/navbar/Navbar';
 import { UserFetcher } from './shared/auth/UserFetcher';
 import { Bit } from './features/knowledge/bit/Bit';
 import { Login } from './features/login/Login';
@@ -18,15 +16,19 @@ import { PostCreate } from './features/blog/create/PostCreate';
 import { PostRead } from './features/blog/read/PostRead';
 import { PostEdit } from './features/blog/edit/PostEdit';
 import { ToastContainer } from 'react-toastify';
-// import { About } from './features/about/About';
+
+const Navbar = lazy(() => import('./shared/navbar/Navbar'));
+const Footer = lazy(() => import('./shared/footer/Footer'));
 
 export const App = () => {
   return (
     <>
       {/* This will call the api to try and login the user */}
       <UserFetcher />
-      {/* The navbar stays out of the switch because it appears in all pages */}
-      <Navbar />
+      <Suspense fallback={<div>Joaquim Neto Dev</div>}>
+        {/* The navbar stays out of the switch because it appears in all pages */}
+        <Navbar />
+      </Suspense>
       {/*Required to show toast messages*/}
       <ToastContainer />
       <Switch>
@@ -79,7 +81,9 @@ export const App = () => {
           </Page>
         </Route>
       </Switch>
-      <Footer />
+      <Suspense fallback={<div>Joaquim Neto {new Date().getFullYear()}</div>}>
+        <Footer />
+      </Suspense>
     </>
   );
 };
