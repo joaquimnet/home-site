@@ -64,6 +64,12 @@ p {
   font-size: 1.1rem;
 }
 
+button,
+input,
+textarea {
+  color: white;
+}
+
 a {
   text-decoration: none;
   color: rgb(58, 128, 219);
