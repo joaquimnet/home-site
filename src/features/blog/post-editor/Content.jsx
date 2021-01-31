@@ -26,7 +26,7 @@ export const Content = ({ content, setContent }) => {
           value={content}
           onChange={(e) => setContent(e.target.value)}
           placeholder="Post content"
-          style={{ color: 'white' }}
+          style={{ color: 'white', fontFamily: 'monospace' }}
         />
       </EditorContainer>
       <hr />

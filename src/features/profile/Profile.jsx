@@ -51,8 +51,8 @@ export const Profile = ({ other = false }) => {
 
   return (
     <Page>
-      <h1>{user.username}</h1>
-      <pre>{JSON.stringify(user, null, 2)}</pre>
+      <h1>{userToDisplay.username}</h1>
+      <pre>{JSON.stringify(userToDisplay, null, 2)}</pre>
       <hr />
       {isSelf && (
         <>
