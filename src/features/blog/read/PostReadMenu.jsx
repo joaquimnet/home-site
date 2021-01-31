@@ -2,6 +2,7 @@ import React from 'react';
 import { FaHeart, FaEdit } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { IsAuthenticated } from '../../../shared/auth/IsAuthenticated';
 
 const StyledPostReadMenu = styled.div`
   width: 100%;
@@ -53,11 +54,11 @@ const StyledPostReadMenu = styled.div`
 
   & .edit {
     & .icon:hover {
-      color: rgb(69, 90, 206);
+      color: rgb(211, 66, 66) !important;
     }
 
     & .icon:active {
-      color: rgb(69, 90, 206);
+      color: rgb(175, 50, 50) !important;
     }
   }
 `;
@@ -74,15 +75,18 @@ export const PostReadMenu = ({ post } = {}) => {
           className="icon"
         />
       </button>
-      <Link className="edit" to={`/blog/${post.slug}/edit`}>
-        <FaEdit
-          style={{
-            width: '2rem',
-            height: '2rem',
-          }}
-          className="icon"
-        />
-      </Link>
+      <IsAuthenticated>
+        <Link className="edit" to={`/blog/${post.slug}/edit`}>
+          <FaEdit
+            style={{
+              width: '2rem',
+              height: '2rem',
+              color: 'white'
+            }}
+            className="icon"
+          />
+        </Link>
+      </IsAuthenticated>
     </StyledPostReadMenu>
   );
 };

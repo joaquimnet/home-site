@@ -18,8 +18,7 @@ const StyledPostListItem = styled(Link)`
 
   &:hover {
     transform: scale(1.025);
-    box-shadow: 3px 3px 3px rgba(74, 213, 231, 0.3),
-      -2px -2px 2px rgba(231, 74, 74, 0.3);
+    box-shadow: 3px 3px 3px rgba(74, 213, 231, 0.3), -2px -2px 2px rgba(231, 74, 74, 0.3);
   }
 
   & > div {
@@ -48,8 +47,7 @@ const StyledPostListItem = styled(Link)`
     margin: 0 0.125rem 0 0.125rem;
     border: 1px solid rgb(66, 66, 66);
     border-radius: 0.125rem;
-    text-shadow: 3px 3px 3px rgba(74, 213, 231, 0.3),
-      -2px -2px 2px rgba(231, 74, 74, 0.3);
+    text-shadow: 3px 3px 3px rgba(74, 213, 231, 0.3), -2px -2px 2px rgba(231, 74, 74, 0.3);
   }
 
   & .PostItem-tag::before {
@@ -91,7 +89,5 @@ export function PostListItem(post) {
 }
 
 function dateToString(date) {
-  return (
-    date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
-  );
+  return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 }
