@@ -64,9 +64,9 @@ export const App = () => {
         <AuthRoute path="/profile" exact>
           <Profile />
         </AuthRoute>
-        <AuthRoute path="/profile/:id" exact>
+        <Route path="/profile/:id" exact>
           <Profile other />
-        </AuthRoute>
+        </Route>
 
         {/*Authentication Pages*/}
         <Route path="/login" exact>
