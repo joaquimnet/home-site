@@ -5,8 +5,13 @@
 }
 
 *::selection {
-  color: white;
-  background-color: rgb(216, 27, 27);
+  color: white !important;
+  background-color: rgb(216, 27, 27) !important;
+}
+
+*::-moz-selection {
+  color: white !important;
+  background-color: rgb(216, 27, 27) !important;
 }
 
 html {
@@ -40,7 +45,7 @@ hr {
   width: 100%;
   margin: 1rem 0;
   border: 1px solid rgba(66, 66, 66, 0.1);
-  box-shadow: 3px 3px 3px rgba(36, 11, 126, 0.3), -2px -2px 2px rgb(216, 27, 27, 0.3);
+  box-shadow: 3px 3px 3px rgba(36, 11, 126, 0.3), -2px -2px 2px rgba(216, 27, 27, 0.3);
 }
 
 ul {
@@ -94,6 +99,7 @@ a:hover {
 
 .form-control input {
   padding: 0.125rem;
+  border: 1px solid white;
 }
 
 @keyframes fadein {

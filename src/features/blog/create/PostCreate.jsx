@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { Redirect, useHistory } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import { useSelector } from 'react-redux';
+import loadable from '@loadable/component';
 
 import { Page } from '../../../shared/page/Page';
 import { Details } from '../post-editor/Details';
-import { Content } from '../post-editor/Content';
+// import { Content } from '../post-editor/Content';
 import { createPost, fetchTags } from '../../../api/blog';
 import { useNavigation } from '../../../hooks/useNavigation';
+
+const Editor = loadable(() => import('../../../shared/editor/Editor'));
 
 const PostCreate = () => {
   const { data: tagSuggestions } = useQuery('tags', fetchTags, {
@@ -16,7 +19,7 @@ const PostCreate = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [tags, setTags] = useState([]);
-  const [content, setContent] = useState('');
+  const [content, setContent] = useState({});
   const { navigate } = useNavigation();
 
   const { goBack } = useHistory();
@@ -37,7 +40,11 @@ const PostCreate = () => {
   }
 
   const submit = () => {
-    createPost({ title, description, tags, content }, tokens.access, navigate());
+    createPost(
+      { title, description, tags, content: content.blocks ?? [] },
+      tokens.access,
+      navigate,
+    );
   };
 
   return (
@@ -53,7 +60,11 @@ const PostCreate = () => {
         onGoBack={goBack}
         onSubmit={submit}
       />
-      <Content content={content} setContent={setContent} />
+      <Editor
+        data={content}
+        onChange={(instance, content) => setContent(content)}
+        onBlur={() => console.log('blur!!!')}
+      />
     </Page>
   );
 };

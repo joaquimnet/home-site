@@ -39,6 +39,10 @@ export const fetchPost = async ({ queryKey }) => {
 
 export const createPost = (post, token, navigate) => {
   if (!token) return;
+
+  // transform necessary for api
+  post.content = post.content.map((p) => ({ blockType: p.type, data: JSON.stringify(p.data) }));
+
   axios
     .post(`${BACKEND_URL}/posts`, post, {
       headers: { authorization: `Bearer ${token}` },
@@ -51,7 +55,15 @@ export const createPost = (post, token, navigate) => {
     })
     .catch((err) => {
       console.error(err.response);
-      toast(`Could not create post.\n${err.response.data.message}`, {
+      const data = err.response.data;
+      const errorSpan = (
+        <span>
+          Could not create post.
+          <br />
+          {data?.message ?? data?.[0]?.message ?? (typeof data === 'string' ? data : '')}
+        </span>
+      );
+      toast(errorSpan, {
         type: 'error',
       });
     });
@@ -68,7 +80,15 @@ export const editPost = (slug, post, token) => {
     })
     .catch((err) => {
       console.error(err.response);
-      toast(`Could not update post.\n${err.response.data.message}`, {
+      const data = err.response.data;
+      const errorSpan = (
+        <span>
+          Could not update post.
+          <br />
+          {data?.message ?? data?.[0]?.message ?? (typeof data === 'string' ? data : '')}
+        </span>
+      );
+      toast(errorSpan, {
         type: 'error',
       });
     });

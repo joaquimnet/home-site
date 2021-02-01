@@ -7,7 +7,6 @@ import { Label } from '../../../shared/input/Label';
 
 const StyledDetails = styled.div`
   width: 100%;
-  /* min-height: 5rem; */
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
@@ -17,8 +16,7 @@ const StyledDetails = styled.div`
     font-weight: bold;
     text-transform: uppercase;
     border-bottom: 4px solid rgba(74, 231, 87, 0.3);
-    text-shadow: 3px 3px 3px rgba(74, 213, 231, 0.3),
-      -2px -2px 2px rgba(231, 74, 74, 0.3);
+    text-shadow: 3px 3px 3px rgba(74, 213, 231, 0.3), -2px -2px 2px rgba(231, 74, 74, 0.3);
   }
 
   & input {
@@ -28,8 +26,13 @@ const StyledDetails = styled.div`
     background: transparent;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
     margin-bottom: 0.5rem;
+
     &:focus {
       outline: none;
+    }
+
+    &:focus-within {
+      box-shadow: 0 3px 18px -6px rgba(255,255,255,0.3);
     }
   }
 
@@ -45,6 +48,7 @@ const StyledDetails = styled.div`
 const Flex = styled.div`
   display: flex;
   flex-flow: row nowrap;
+  margin-bottom: 1rem;
 `;
 
 export const Details = ({
@@ -68,6 +72,7 @@ export const Details = ({
         onChange={(e) => setTitle(e.target.value)}
         className="title"
         id="post-edit-title"
+        autoComplete="off"
       />
 
       <Label htmlFor="post-edit-description">Description</Label>
@@ -78,13 +83,18 @@ export const Details = ({
         onChange={(e) => setDescription(e.target.value)}
         className="description"
         id="post-edit-description"
+        autoComplete="off"
       />
 
       <Label htmlFor="post-edit-tags">Tags</Label>
       <Tags tags={tags} setTags={setTags} suggestions={tagSuggestions} />
       <Flex>
-        <Button onClick={onSubmit}>Save</Button>
-        <Button onClick={onGoBack}>Go Back</Button>
+        <Button style={{ marginLeft: 0 }} onClick={onSubmit}>
+          Save
+        </Button>
+        <Button style={{ marginLeft: 0 }} onClick={onGoBack}>
+          Go Back
+        </Button>
       </Flex>
     </StyledDetails>
   );

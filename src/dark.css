@@ -1,0 +1,912 @@
+/*
+                       _______
+                      /       \
+                     .==.    .==.
+                    ((  ))==((  ))
+                   / "=="    "=="\
+                  /____|| || ||___\
+      ________     ____    ________  ___    ___
+      |  ___  \   /    \   |  ___  \ |  |  /  /
+      |  |  \  \ /  /\  \  |  |  \  \|  |_/  /
+      |  |   )  /  /__\  \ |  |__/  /|  ___  \
+      |  |__/  /  ______  \|  ____  \|  |  \  \
+_______|_______/__/ ____ \__\__|___\__\__|___\__\____
+|  ___  \ |  ____/ /    \   |  ___  \ |  ____|  ___  \
+|  |  \  \|  |___ /  /\  \  |  |  \  \|  |___|  |  \  \
+|  |__/  /|  ____/  /__\  \ |  |   )  |  ____|  |__/  /
+|  ____  \|  |__/  ______  \|  |__/  /|  |___|  ____  \
+|__|   \__\____/__/      \__\_______/ |______|__|   \__\
+               https://darkreader.org
+*/
+/* User-Agent Style */
+html {
+  background-color: #181a1b !important;
+}
+
+html,
+body,
+input,
+textarea,
+select,
+button {
+  background-color: #181a1b;
+}
+
+html,
+body,
+input,
+textarea,
+select,
+button {
+  border-color: #736b5e;
+  color: #e8e6e3;
+}
+
+a {
+  color: #3391ff;
+}
+
+table {
+  border-color: #545b5e;
+}
+
+::placeholder {
+  color: #b2aba1;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: #555b00 !important;
+  color: #e8e6e3 !important;
+}
+
+::-webkit-scrollbar {
+  background-color: #202324;
+  color: #aba499;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #454a4d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #575e62;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #484e51;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #181a1b;
+}
+
+* {
+  scrollbar-color: #202324 #454a4d;
+}
+
+::selection {
+  background-color: #004daa !important;
+  color: #e8e6e3 !important;
+}
+
+::-moz-selection {
+  background-color: #004daa !important;
+  color: #e8e6e3 !important;
+}
+
+/* Invert Style */
+.jfk-bubble.gtx-bubble,
+.captcheck_answer_label > input + img,
+embed[type='application/pdf'] {
+  filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+}
+
+/* Variables Style */
+:root {
+  --darkreader-neutral-background: #131516;
+  --darkreader-neutral-text: #d8d4cf;
+  --darkreader-selection-background: #004daa;
+  --darkreader-selection-text: #e8e6e3;
+}
+
+/* Modified CSS */
+.codex-editor__loader::before {
+  border-color: transparent rgba(63, 68, 71, 0.48) rgba(63, 68, 71, 0.48);
+}
+
+.codex-editor-overlay__rectangle {
+  background-color: rgba(28, 129, 169, 0.2);
+  border-color: transparent;
+}
+
+.codex-editor svg {
+  fill: currentcolor;
+}
+
+::selection {
+  background-color: rgb(36, 39, 41);
+}
+
+@media (max-width: 650px) {
+  .ce-toolbar {
+    background-color: rgb(24, 26, 27);
+    border-color: rgb(54, 58, 61);
+    box-shadow: rgba(10, 16, 26, 0.13) 0px 3px 15px -3px;
+  }
+}
+
+@media (max-width: 650px) and (max-width: 650px) {
+  .ce-toolbar {
+    box-shadow: rgba(21, 30, 39, 0.09) 0px 13px 7px -5px, rgba(26, 38, 58, 0.29) 6px 15px 34px -6px;
+    border-bottom-color: rgb(59, 64, 66);
+  }
+}
+
+.ce-toolbar__plus {
+  color: rgb(155, 146, 133);
+}
+
+.ce-toolbar__plus--active,
+.ce-toolbar__plus:hover {
+  color: rgb(71, 158, 231);
+}
+
+.ce-toolbar__settings-btn {
+  color: rgb(155, 146, 133);
+  background-image: initial;
+  background-color: rgb(31, 34, 35);
+}
+
+.ce-toolbar__settings-btn:hover {
+  color: rgb(209, 205, 199);
+}
+
+@media (max-width: 650px) {
+  .ce-toolbar__settings-btn {
+    background-image: initial;
+    background-color: transparent;
+  }
+}
+
+.ce-toolbox__button {
+  color: rgb(155, 146, 133);
+}
+
+.ce-toolbox__button--active,
+.ce-toolbox__button:hover {
+  color: rgb(71, 158, 231);
+}
+
+@media (min-width: 651px) {
+  .codex-editor--narrow .ce-toolbox {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+  }
+}
+
+.ce-inline-toolbar {
+  background-color: rgb(24, 26, 27);
+  border-color: rgb(54, 58, 61);
+  box-shadow: rgba(10, 16, 26, 0.13) 0px 3px 15px -3px;
+}
+
+@media (max-width: 650px) {
+  .ce-inline-toolbar {
+    box-shadow: rgba(21, 30, 39, 0.09) 0px 13px 7px -5px, rgba(26, 38, 58, 0.29) 6px 15px 34px -6px;
+    border-bottom-color: rgb(59, 64, 66);
+  }
+}
+
+.ce-inline-toolbar__dropdown {
+  border-right-color: rgba(63, 68, 71, 0.48);
+}
+
+.ce-inline-toolbar__dropdown:hover {
+  background-image: initial;
+  background-color: rgb(31, 34, 35);
+}
+
+.ce-inline-tool {
+  border-color: initial;
+  outline-color: initial;
+  background-color: transparent;
+  color: rgb(232, 230, 227);
+}
+
+.ce-inline-tool:hover {
+  background-color: rgb(31, 34, 35);
+}
+
+.ce-inline-tool--active {
+  color: rgb(71, 158, 231);
+}
+
+.ce-inline-tool--focused {
+  box-shadow: rgba(6, 129, 182, 0.08) 0px 0px 0px 1px inset;
+  background-image: initial !important;
+  background-color: rgba(0, 126, 184, 0.08) !important;
+}
+
+.ce-inline-tool-input {
+  outline-color: initial;
+  border-right-color: initial;
+  border-bottom-color: initial;
+  border-left-color: initial;
+  border-top-color: rgba(63, 68, 71, 0.48);
+}
+
+.ce-inline-tool-input::-webkit-input-placeholder {
+  color: rgb(155, 146, 133);
+}
+
+.ce-inline-tool-input::placeholder {
+  color: rgb(155, 146, 133);
+}
+
+.ce-conversion-toolbar {
+  background-color: rgb(24, 26, 27);
+  border-color: rgb(54, 58, 61);
+  box-shadow: rgba(10, 16, 26, 0.13) 0px 3px 15px -3px;
+}
+
+@media (max-width: 650px) {
+  .ce-conversion-toolbar {
+    box-shadow: rgba(21, 30, 39, 0.09) 0px 13px 7px -5px, rgba(26, 38, 58, 0.29) 6px 15px 34px -6px;
+    border-bottom-color: rgb(59, 64, 66);
+  }
+}
+
+.ce-conversion-toolbar__label {
+  color: rgb(155, 146, 133);
+}
+
+.ce-conversion-tool--focused {
+  box-shadow: rgba(6, 129, 182, 0.08) 0px 0px 0px 1px inset;
+  background-image: initial !important;
+  background-color: rgba(0, 126, 184, 0.08) !important;
+}
+
+.ce-conversion-tool:hover {
+  background-image: initial;
+  background-color: rgb(31, 34, 35);
+}
+
+.ce-conversion-tool__icon {
+  border-color: rgba(63, 68, 71, 0.48);
+  background-image: initial;
+  background-color: rgb(24, 26, 27);
+}
+
+.ce-conversion-tool--active {
+  color: rgb(71, 158, 231) !important;
+}
+
+.ce-settings {
+  background-color: rgb(24, 26, 27);
+  border-color: rgb(54, 58, 61);
+  box-shadow: rgba(10, 16, 26, 0.13) 0px 3px 15px -3px;
+}
+
+@media (max-width: 650px) {
+  .ce-settings {
+    box-shadow: rgba(21, 30, 39, 0.09) 0px 13px 7px -5px, rgba(26, 38, 58, 0.29) 6px 15px 34px -6px;
+    border-bottom-color: rgb(59, 64, 66);
+  }
+}
+
+.ce-settings__button {
+  border-color: initial;
+  outline-color: initial;
+  background-color: transparent;
+  color: rgb(232, 230, 227);
+}
+
+.ce-settings__button:hover {
+  background-color: rgb(31, 34, 35);
+}
+
+.ce-settings__button--active {
+  color: rgb(71, 158, 231);
+}
+
+.ce-settings__button--focused {
+  box-shadow: rgba(6, 129, 182, 0.08) 0px 0px 0px 1px inset;
+  background-image: initial !important;
+  background-color: rgba(0, 126, 184, 0.08) !important;
+}
+
+.ce-settings__button--selected {
+  color: rgb(71, 158, 231);
+}
+
+.ce-settings__button--confirm {
+  color: rgb(232, 230, 227);
+  background-color: rgb(153, 24, 24) !important;
+}
+
+.ce-settings__button--confirm:hover {
+  background-color: rgb(150, 35, 35) !important;
+}
+
+.ce-block--selected .ce-block__content {
+  background-image: initial;
+  background-color: rgb(32, 35, 37);
+}
+
+.ce-block--drop-target .ce-block__content::before {
+  border-color: rgb(20, 81, 150);
+}
+
+.ce-block--drop-target .ce-block__content::after {
+  color: rgb(71, 158, 231);
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgb(21, 89, 165),
+    rgb(21, 89, 165) 1px,
+    rgb(24, 26, 27) 0px,
+    rgb(24, 26, 27) 6px
+  );
+  background-color: initial;
+}
+
+.ce-block a {
+  text-decoration-color: initial;
+}
+
+.cdx-input {
+  border-color: rgba(63, 68, 71, 0.48);
+  box-shadow: rgba(28, 35, 58, 0.06) 0px 1px 2px 0px inset;
+  outline-color: initial;
+}
+
+.cdx-settings-button {
+  border-color: initial;
+  outline-color: initial;
+  background-color: transparent;
+  color: rgb(232, 230, 227);
+}
+
+.cdx-settings-button:hover {
+  background-color: rgb(31, 34, 35);
+}
+
+.cdx-settings-button--focused {
+  box-shadow: rgba(6, 129, 182, 0.08) 0px 0px 0px 1px inset;
+  background-image: initial !important;
+  background-color: rgba(0, 126, 184, 0.08) !important;
+}
+
+.cdx-settings-button--active {
+  color: rgb(71, 158, 231);
+}
+
+.cdx-loader {
+  border-color: rgba(63, 68, 71, 0.48);
+}
+
+.cdx-loader::before {
+  border-color: rgba(63, 68, 71, 0.48) rgba(63, 68, 71, 0.48) rgba(63, 68, 71, 0.48)
+    rgb(20, 81, 150);
+}
+
+.cdx-button {
+  border-color: rgba(63, 68, 71, 0.48);
+  background-image: initial;
+  background-color: rgb(24, 26, 27);
+  box-shadow: rgba(14, 24, 46, 0.04) 0px 2px 2px 0px;
+  color: rgb(155, 146, 133);
+}
+
+.cdx-button:hover {
+  background-image: initial;
+  background-color: rgb(25, 28, 29);
+  box-shadow: rgba(14, 24, 46, 0.08) 0px 1px 3px 0px;
+}
+
+.ce-stub {
+  background-image: initial;
+  background-color: rgb(42, 16, 16);
+  color: rgb(186, 111, 111);
+}
+
+.codex-editor.codex-editor--rtl .ce-inline-toolbar__dropdown {
+  border-right-color: transparent;
+  border-left-color: rgba(63, 68, 71, 0.48);
+}
+
+.ct {
+  box-shadow: rgba(23, 26, 34, 0.17) 0px 8px 12px 0px, rgba(4, 5, 10, 0.49) 0px 4px 5px -3px;
+}
+
+.ct::before {
+  background-color: rgb(23, 26, 34);
+}
+
+.ct__content {
+  color: rgb(206, 202, 196);
+}
+
+.ct::after {
+  background-color: rgb(23, 26, 34);
+}
+
+.BitModal_BitInput__1Rty2:focus {
+  outline-color: rgb(37, 89, 146);
+}
+
+.Button_Button__35-E0 {
+  border-color: initial;
+  outline-color: initial;
+  background-image: linear-gradient(to right, rgb(95, 26, 26), rgb(39, 94, 153));
+  background-color: initial;
+  color: rgb(232, 230, 227);
+  box-shadow: rgba(0, 204, 204, 0.5) 0px 2px 12px -3px;
+}
+
+.Button_BG__29g0S {
+  background-image: initial;
+  background-color: rgb(22, 24, 25);
+  border-color: initial;
+}
+
+.Button_Fab__6UtqF {
+  background-image: linear-gradient(to right, rgb(95, 26, 26), rgb(39, 94, 153));
+  background-color: initial;
+  border-color: initial;
+  color: rgb(232, 230, 227);
+  box-shadow: rgba(0, 204, 204, 0.5) 0px 2px 12px -3px;
+  outline-color: initial;
+}
+
+.Button_FabBG__md0JF {
+  background-image: initial;
+  background-color: rgb(22, 24, 25);
+  border-color: initial;
+}
+
+.Card_Card__HUGfH {
+  background-image: initial;
+  background-color: rgb(22, 24, 25);
+  box-shadow: rgba(28, 31, 32, 0.2) 0px 0px 16px -5px;
+}
+
+.Modal_Backdrop__XYp4W {
+  background-color: rgba(42, 42, 110, 0.47);
+}
+
+.Bit_Bit__3ujnu {
+  border-bottom-color: rgba(48, 52, 54, 0.5);
+}
+
+.Bit_Bit__3ujnu:hover {
+  background-image: initial;
+  background-color: rgba(24, 26, 27, 0.1);
+}
+
+.Bit_BitTags__2y7cg {
+  border-color: rgb(48, 52, 54);
+}
+
+.Bit_BitDelete__39x2B {
+  background-image: none;
+  background-color: initial;
+  color: rgb(232, 230, 227);
+  border-color: initial;
+}
+
+.Bit_BitDelete__39x2B:hover {
+  color: rgb(224, 76, 76);
+  background-image: initial;
+  background-color: rgba(24, 26, 27, 0.1);
+}
+
+a {
+  background-color: transparent;
+}
+
+abbr[title] {
+  border-bottom-color: initial;
+  text-decoration-color: initial;
+}
+
+legend {
+  color: inherit;
+}
+
+::selection {
+  color: rgb(232, 230, 227) !important;
+  background-color: rgb(173, 22, 22) !important;
+}
+
+body {
+  color: rgb(232, 230, 227);
+  background-image: linear-gradient(rgb(11, 12, 13), rgb(18, 10, 43));
+  background-color: initial;
+}
+
+::-webkit-scrollbar {
+  background-color: rgb(26, 28, 29);
+  color: rgb(173, 166, 156);
+}
+
+::-webkit-scrollbar-corner {
+  background-color: rgb(19, 21, 22);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(55, 60, 62);
+}
+
+hr {
+  border-color: rgba(118, 110, 97, 0.1);
+  box-shadow: rgba(29, 9, 101, 0.3) 3px 3px 3px, rgba(173, 22, 22, 0.3) -2px -2px 2px;
+}
+
+ul {
+  list-style-image: initial;
+}
+
+button,
+input,
+textarea {
+  color: rgb(232, 230, 227);
+}
+
+a {
+  text-decoration-color: initial;
+  color: rgb(74, 152, 222);
+}
+
+a:hover {
+  background-color: rgb(140, 26, 26);
+  color: rgb(232, 230, 227);
+}
+
+.form-control input {
+  border-color: rgb(48, 52, 54);
+}
+
+html {
+  background-color: rgb(19, 21, 22) !important;
+}
+
+html,
+body,
+input,
+textarea,
+select,
+button {
+  background-color: rgb(19, 21, 22);
+}
+
+html,
+body,
+input,
+textarea,
+select,
+button {
+  border-color: rgb(106, 98, 87);
+  color: rgb(216, 212, 207);
+}
+
+a {
+  color: rgb(61, 165, 255);
+}
+
+table {
+  border-color: rgb(111, 103, 91);
+}
+
+::placeholder {
+  color: rgb(178, 171, 161);
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: rgb(68, 73, 0) !important;
+  color: rgb(216, 212, 207) !important;
+}
+
+::-webkit-scrollbar {
+  background-color: rgb(26, 28, 29);
+  color: rgb(173, 166, 156);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(55, 60, 62);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(70, 75, 78);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: rgb(58, 62, 65);
+}
+
+::-webkit-scrollbar-corner {
+  background-color: rgb(19, 21, 22);
+}
+
+.ce-toolbar__settings-btn {
+  color: rgb(162, 154, 142);
+  background-image: initial;
+  background-color: rgb(25, 27, 28);
+  border-color: rgb(123, 114, 101);
+}
+
+.Toastify__toast-container {
+  color: rgb(232, 230, 227);
+}
+
+.Toastify__toast {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 10px 0px, rgba(0, 0, 0, 0.05) 0px 2px 15px 0px;
+}
+
+.Toastify__toast--dark {
+  background-image: initial;
+  background-color: rgb(14, 15, 15);
+  color: rgb(232, 230, 227);
+}
+
+.Toastify__toast--default {
+  background-image: initial;
+  background-color: rgb(24, 26, 27);
+  color: rgb(178, 172, 162);
+}
+
+.Toastify__toast--info {
+  background-image: initial;
+  background-color: rgb(29, 111, 165);
+}
+
+.Toastify__toast--success {
+  background-image: initial;
+  background-color: rgb(6, 150, 10);
+}
+
+.Toastify__toast--warning {
+  background-image: initial;
+  background-color: rgb(192, 156, 11);
+}
+
+.Toastify__toast--error {
+  background-image: initial;
+  background-color: rgb(162, 33, 20);
+}
+
+.Toastify__close-button {
+  color: rgb(232, 230, 227);
+  background-image: initial;
+  background-color: transparent;
+  outline-color: initial;
+  border-color: initial;
+}
+
+.Toastify__close-button--default {
+  color: rgb(232, 230, 227);
+}
+
+.Toastify__close-button > svg {
+  fill: currentcolor;
+}
+
+.Toastify__progress-bar {
+  background-color: rgba(24, 26, 27, 0.7);
+}
+
+.Toastify__progress-bar--default {
+  background-image: linear-gradient(
+    to right,
+    rgb(32, 149, 76),
+    rgb(5, 104, 149),
+    rgb(0, 98, 204),
+    rgb(28, 125, 165),
+    rgb(36, 35, 142),
+    rgb(177, 0, 34)
+  );
+  background-color: initial;
+}
+
+.Toastify__progress-bar--dark {
+  background-image: initial;
+  background-color: rgb(57, 3, 122);
+}
+
+.Footer_Footer__3ELfQ {
+  background-image: initial;
+  background-color: rgb(0, 0, 0);
+}
+
+.eIdipf {
+  list-style-image: initial;
+}
+
+.eIdipf li {
+  border-color: rgb(140, 130, 115);
+}
+
+.eIdipf li:hover {
+  background-image: initial;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.jQcBiH {
+  list-style-image: initial;
+  color: rgb(152, 143, 129);
+}
+
+.dkVjCk {
+  background-image: initial;
+  background-color: rgb(24, 26, 27);
+  color: rgb(232, 230, 227);
+  border-color: rgb(140, 130, 115);
+}
+
+.dkVjCk:hover {
+  box-shadow: rgba(20, 138, 154, 0.3) 3px 3px 3px, rgba(154, 20, 20, 0.3) -2px -2px 2px;
+}
+
+.hFSEqk {
+  border-bottom-color: rgba(19, 144, 30, 0.3);
+  text-shadow: rgba(20, 138, 154, 0.3) 3px 3px 3px, rgba(154, 20, 20, 0.3) -2px -2px 2px;
+}
+
+.bGXEmu label {
+  border-bottom-color: rgba(19, 144, 30, 0.3);
+  text-shadow: rgba(20, 138, 154, 0.3) 3px 3px 3px, rgba(154, 20, 20, 0.3) -2px -2px 2px;
+}
+
+.bGXEmu input {
+  border-top-color: initial;
+  border-right-color: initial;
+  border-left-color: initial;
+  background-image: initial;
+  background-color: transparent;
+  border-bottom-color: rgba(140, 130, 115, 0.1) !important;
+}
+
+.bGXEmu input:focus {
+  outline-color: initial;
+}
+
+.fsWTbx {
+  border-color: rgb(123, 114, 101);
+  background-image: initial;
+  background-color: rgb(19, 21, 22);
+}
+
+.Navbar_NavItem__1chgH a {
+  color: inherit;
+}
+
+.Navbar_NavItem__1chgH:hover {
+  background-color: rgba(24, 26, 27, 0.3);
+}
+
+.Drawer_Drawer__3I_8F {
+  background-color: rgb(22, 24, 25);
+}
+
+.Drawer_Backdrop__fnWog {
+  background-color: rgba(42, 42, 110, 0.47);
+}
+
+.ce-paragraph {
+  outline-color: initial;
+}
+
+.ce-paragraph[data-placeholder]:empty::before {
+  color: rgb(155, 146, 133);
+}
+
+.cdx-notify--error {
+  background-image: initial !important;
+  background-color: rgb(53, 0, 0) !important;
+}
+
+.cdx-notify--error::before {
+  background-image: initial !important;
+  background-color: rgb(147, 4, 4) !important;
+}
+
+.cdx-notify__input {
+  background-image: initial;
+  background-color: rgb(29, 31, 32);
+  border-color: initial;
+  color: rgb(161, 153, 141);
+  outline-color: initial;
+}
+
+.cdx-notify__input::placeholder {
+  color: rgb(161, 153, 141);
+}
+
+.cdx-notify__input:focus::placeholder {
+  color: rgba(161, 153, 141, 0.3);
+}
+
+.cdx-notify__button {
+  border-color: initial;
+}
+
+.cdx-notify__button--cancel {
+  background-image: initial;
+  background-color: rgb(30, 32, 34);
+  box-shadow: rgba(13, 15, 23, 0) 0px 2px 1px 0px;
+  color: rgb(161, 153, 141);
+}
+
+.cdx-notify__button--cancel:hover {
+  background-image: initial;
+  background-color: rgb(34, 36, 38);
+}
+
+.cdx-notify__button--confirm {
+  background-image: initial;
+  background-color: rgb(42, 161, 117);
+  box-shadow: rgba(14, 39, 28, 0.05) 0px 1px 1px 0px;
+  color: rgb(232, 230, 227);
+}
+
+.cdx-notify__button--confirm:hover {
+  background-image: initial;
+  background-color: rgb(41, 141, 104);
+}
+
+.cdx-notify__cross::after,
+.cdx-notify__cross::before {
+  background-image: initial;
+  background-color: rgb(72, 77, 80);
+}
+
+.cdx-notify {
+  background-image: initial;
+  background-color: rgb(24, 26, 27);
+  box-shadow: rgba(18, 26, 49, 0.13) 0px 11px 17px 0px;
+}
+
+.cdx-notify::before {
+  background-image: initial;
+  background-color: initial;
+}
+
+.cdx-notify--success {
+  background-image: initial !important;
+  background-color: rgb(0, 54, 46) !important;
+}
+
+.cdx-notify--success::before {
+  background-image: initial !important;
+  background-color: rgb(0, 165, 114) !important;
+}
+
+.ce-paragraph {
+  outline-color: initial;
+}
+
+.ce-paragraph[data-placeholder]:empty::before {
+  color: rgb(155, 146, 133);
+}
+
+.ce-header {
+  outline-color: initial;
+}
+
+.ce-header[contenteditable='true'][data-placeholder]::before {
+  color: rgb(155, 146, 133);
+}
+
+/* Override Style */
+.vimvixen-hint {
+  background-color: #7b5300 !important;
+  border-color: #d8b013 !important;
+  color: #f3e8c8 !important;
+}
+
+::placeholder {
+  opacity: 0.5 !important;
+}

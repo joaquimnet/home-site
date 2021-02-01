@@ -9,6 +9,7 @@ import { App } from './App';
 
 import 'normalize.css';
 import './index.css';
+import './dark.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { State } from './state/State';
