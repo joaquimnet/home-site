@@ -19,7 +19,13 @@ const StyledHome = styled(Page)`
   }
 `;
 
+const Spacing = styled.div`
+  height: ${({ height }) => height ?? 1}rem;
+  width: ${({ width }) => width ?? 1}rem;
+`;
+
 const HomeButtons = lazy(() => import('./HomeButtons'));
+const BlogPostListing = lazy(() => import('./BlogPostListing'));
 
 export default function Home() {
   const { t } = useTranslation();
@@ -35,6 +41,11 @@ export default function Home() {
       <hr />
       <Suspense fallback={null}>
         <HomeButtons />
+      </Suspense>
+      <Spacing height={2} />
+      <Suspense fallback={null}>
+        <h2>Blog Posts</h2>
+        <BlogPostListing />
       </Suspense>
     </StyledHome>
   );
